@@ -9,6 +9,7 @@ ADD nginx.conf /etc/nginx/
 ADD laravel.conf /etc/nginx/sites-available/
 
 RUN ln -s /etc/nginx/sites-available/laravel.conf /etc/nginx/sites-enabled/laravel
+RUN ln -s /etc/nginx/sites-available/laravel-dev.conf /etc/nginx/sites-enabled/laravel-dev
 RUN rm /etc/nginx/sites-enabled/default
 
 RUN echo "upstream php-upstream { server php:9000; }" > /etc/nginx/conf.d/upstream.conf
